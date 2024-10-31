@@ -5,7 +5,7 @@ local M = {
 
 M.config = function()
     require("gruvbox").setup({
-        contrast = "medium",
+        contrast = "dark",
         palette_overrides = {},
         overrides = {},
     })
