@@ -9,7 +9,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({ 
     { import = "mutte.plugins" },
     { import = "mutte.plugins.lsp" },
-
 }, {
     change_detection  = { notify = false },
 })
