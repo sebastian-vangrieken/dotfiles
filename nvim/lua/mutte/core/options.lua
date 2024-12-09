@@ -29,3 +29,4 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.swapfile = false
+
