@@ -1,13 +1,12 @@
 return {
-    "EdenEast/nightfox.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
 
     config = function()
-	require("nightfox").setup({
-	    options = { terminal_colors = true, },
-	})
-
-	vim.cmd[[colorscheme terafox]]
-    end,
+	    require("gruvbox").setup({
+            terminal_colors = true,
+	    })
+	    vim.cmd[[colorscheme gruvbox]]
+    end,    
 }

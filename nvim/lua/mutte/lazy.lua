@@ -23,4 +23,5 @@ require("lazy").setup({
 	{ import = "mutte.plugins" },
     },
     checker = { enabled = true },
+    change_detection = { notify = false },
 })
