@@ -1,18 +1,16 @@
 return {
     "nvim-telescope/telescope.nvim",
-    version = false,
+    tag = "0.1.8",
     dependencies = { 
         "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
+--        "nvim-tree/nvim-web-devicons",
     },
+
     config = function()
         require("telescope").setup({
-            defaults = {
-                path_displays = { "smart" },
-            }
-        })
-        
-        local keymap = vim.keymap
-        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+	})
+
+	local builtin = require("telescope.builtin")
+	vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })	
     end,
 }

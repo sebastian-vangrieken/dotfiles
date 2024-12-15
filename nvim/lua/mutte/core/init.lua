@@ -1,2 +1,1 @@
-require("mutte.core.options")
-require("mutte.core.keymaps")
+require("mutte.core.remap")
