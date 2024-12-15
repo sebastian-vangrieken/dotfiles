@@ -1,1 +1,2 @@
-require("mutte")
+require("mutte.core")
+require("mutte.lazy")
