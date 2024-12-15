@@ -1,4 +1,4 @@
-local M = {
+return {
     "nvim-telescope/telescope.nvim",
     version = false,
     dependencies = { 
@@ -16,6 +16,3 @@ local M = {
         keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     end,
 }
-
-return M
-

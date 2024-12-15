@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>nh", ":noh<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>q", ":Ex<CR>", { desc = "Exit to file explorer" })
 
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Split window horizontally" })

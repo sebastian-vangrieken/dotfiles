@@ -1,4 +1,4 @@
-local M = {
+return {
     "echasnovski/mini.pairs",
     version = "*",
     config = function()
@@ -15,5 +15,3 @@ local M = {
         })
     end,
 }
-
-return M
