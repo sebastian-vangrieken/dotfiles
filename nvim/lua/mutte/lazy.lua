@@ -16,8 +16,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-    { import = "mutte.plugins" },
+    spec = {
+	{ import = "mutte.plugins" },
+    },
     checker = { enabled = true },
 })
