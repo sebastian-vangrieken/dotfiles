@@ -4,9 +4,9 @@ return {
     priority = 1000,
 
     config = function()
-        require("gruvbox").setup({
+	    require("gruvbox").setup({
             terminal_colors = true,
-        })
-        vim.cmd[[colorscheme gruvbox]]
-    end,
+	    })
+	    vim.cmd[[colorscheme gruvbox]]
+    end,    
 }
