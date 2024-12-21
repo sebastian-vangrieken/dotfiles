@@ -21,7 +21,10 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
 	spec = {
-		{ import = "mutte.plugins" },
+        { 
+            { import = "mutte.plugins" }, 
+            { import = "mutte.plugins.lsp" }, 
+        },
 	},
 	checker = { enabled = true },
 	change_detection = { notify = false },
