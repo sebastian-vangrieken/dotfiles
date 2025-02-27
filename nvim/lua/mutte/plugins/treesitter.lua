@@ -4,10 +4,18 @@ return {
 
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = { "c", "cpp", "cmake", "lua", },
+            highlight = { enable = true },
+            indent = { enable = true },
+            ensure_installed = { 
+                "bash", 
+                "c", 
+                "cpp", 
+                "cmake", 
+                "lua", 
+                "rust" 
+            },
             sync_installed = true,
             auto_install = true,
-            highlight = { enable = true },
         })
     end,
 }

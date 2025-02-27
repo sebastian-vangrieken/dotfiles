@@ -1,2 +1,3 @@
-require("mutte.core")
-require("mutte.lazy")
+require("mutte.config.lazy")
+require("mutte.config.options")
+require("mutte.config.remap")
