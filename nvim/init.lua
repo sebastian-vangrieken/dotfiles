@@ -5,7 +5,7 @@ local opt = vim.opt
 opt.autoindent = true
 opt.background = "dark"
 opt.clipboard = "unnamedplus"
-opt.cmdheight = 0
+opt.cmdheight = 1
 opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
@@ -32,6 +32,13 @@ keymap("n", "<leader>fe", ":Ex<cr>", { desc = "Go to file explorer" })
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	command = ":%s/\\s\\+$//e",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt.formatoptions:remove({ "o", "r" })
+	end,
 })
 
 -- Plugin manager --
@@ -69,10 +76,10 @@ require("lazy").setup({
 				vim.cmd([[colorscheme tokyonight-storm]])
 			end,
 		},
-		-- Telescope
+		-- Fuzy Finder
 		{
 			"nvim-telescope/telescope.nvim",
-			tag = "0.1.8",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-tree/nvim-web-devicons",
@@ -88,12 +95,20 @@ require("lazy").setup({
 							},
 						},
 					},
+					pickers = {
+						find_files = {
+							hidden = true,
+							cwd = vim.fn.expand("%:p:h"),
+						},
+					},
 				})
 				local builtin = require("telescope.builtin")
-				vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+				vim.keymap.set("n", "<leader>ff", function()
+					builtin.find_files({ hidden = true, cwd = vim.fn.expand("%:p:h") })
+				end, { desc = "Telescope find files" })
 			end,
 		},
-		-- Auto pairs
+		-- Automatic Pair
 		{
 			"echasnovski/mini.pairs",
 			event = "VeryLazy",
@@ -111,7 +126,7 @@ require("lazy").setup({
 				})
 			end,
 		},
-		-- Treesitter
+		-- Better code
 		{
 			"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
@@ -144,19 +159,22 @@ require("lazy").setup({
 			"neovim/nvim-lspconfig",
 			config = function()
 				local lspconfig = require("lspconfig")
-				lspconfig.clangd.setup({})
+				lspconfig.clangd.setup({
+					cmd = { "clangd", "--compile-commands-dir=build" },
+				})
 				lspconfig.rust_analyzer.setup({})
 				local on_attach = function(_, bufnr)
 					local keymap = vim.api.nvim_buf_set_keymap
 					local opts = { noremap = true, silent = true }
 					keymap(bufnr, "n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
 					keymap(bufnr, "n", "<leader>I", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+					keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 				end
 				lspconfig.clangd.setup({ on_attach = on_attach })
 				lspconfig.rust_analyzer.setup({ on_attach = on_attach })
 			end,
 		},
-		-- Conform
+		-- Code Formatting
 		{
 			"stevearc/conform.nvim",
 			dependencies = { "mason.nvim" },
@@ -176,6 +194,19 @@ require("lazy").setup({
 				})
 			end,
 		},
+		-- Lualine
+		{
+			"nvim-lualine/lualine.nvim",
+			dependencies = { "nvim-tree/nvim-web-devicons" },
+			config = function()
+				require("lualine").setup({
+					options = {
+						theme = "tokyonight",
+					},
+				})
+			end,
+		},
+		-- UI niceties
 		{
 			"folke/noice.nvim",
 			event = "VeryLazy",
