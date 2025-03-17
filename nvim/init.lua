@@ -41,6 +41,13 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "asm",
+	callback = function()
+		vim.bo.filetype = "nasm"
+	end,
+})
+
 -- Plugin manager --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -135,6 +142,7 @@ require("lazy").setup({
 					highlight = { enable = true },
 					indent = { enable = true },
 					ensure_installed = {
+						"asm",
 						"bash",
 						"c",
 						"cpp",
@@ -159,6 +167,7 @@ require("lazy").setup({
 			"neovim/nvim-lspconfig",
 			config = function()
 				local lspconfig = require("lspconfig")
+				lspconfig.asm_lsp.setup({})
 				lspconfig.clangd.setup({
 					cmd = { "clangd", "--compile-commands-dir=build" },
 				})
@@ -170,6 +179,7 @@ require("lazy").setup({
 					keymap(bufnr, "n", "<leader>I", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 					keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 				end
+				lspconfig.asm_lsp.setup({ on_attach = on_attach })
 				lspconfig.clangd.setup({ on_attach = on_attach })
 				lspconfig.rust_analyzer.setup({ on_attach = on_attach })
 			end,
