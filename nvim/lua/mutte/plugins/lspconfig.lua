@@ -17,7 +17,6 @@ return {
 			rust_analyzer = {},
 			ts_ls = {},
 			pyright = {},
-			--intelephense = {},
 			cssls = {},
 			html = {},
 			dockerls = {},

@@ -20,7 +20,6 @@ return {
 				"lua",
 				"make",
 				"nasm",
-				"php",
 				"python",
 				"regex",
 				"rust",

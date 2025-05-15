@@ -29,8 +29,6 @@ return {
 				"stylua", -- lua
 				"black", -- python
 				"isort", -- python
-				--"pint",
-				"php_cs_fixer", -- php
 				"clang-format", -- C/C++
 				"cmake_format", -- cmake
 				"rustywind", -- rust
