@@ -19,6 +19,7 @@ return {
 				"json",
 				"lua",
 				"make",
+				"markdown",
 				"nasm",
 				"python",
 				"regex",
