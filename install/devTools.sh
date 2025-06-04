@@ -2,4 +2,4 @@
 
 pacman -Syu
 
-pacman -S nasm gdb strace valgrind
+pacman -S nasm gdb strace valgrind qemu-base
