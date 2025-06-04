@@ -1,0 +1,14 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v175)
+"   /home/mutte/dotfiles/install
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:special
+" ==============================================================================
+../
+install/
+| arch-install.sh*
+| lowLevelTools.sh*
+| neovim.sh*
+| symlinks.sh*
+| system.sh*
