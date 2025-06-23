@@ -1,7 +1,7 @@
 # My personal dotfiles
 
 ## Neovim
-- [*] general options
+[*] - general options
 - [*] Lazy
 - [*] colorscheme
 - [*] treesitter
