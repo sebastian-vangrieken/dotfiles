@@ -2,8 +2,8 @@ vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 
 opt.autoindent = true
-opt.background = 'dark'
-opt.clipboard = 'unnamedplus'
+opt.background = "dark"
+opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.confirm = true
 opt.cursorline = true
@@ -15,7 +15,4 @@ opt.shiftwidth = 4
 opt.swapfile = false
 opt.tabstop = 4
 opt.termguicolors = true
-opt.wrap = false
-
-vim.g.python3_host_prog = '/home/basje/.venvs/pynvim-env/bin/python'
-vim.g.loaded_perl_provider = 0
+opt.wrap = true
