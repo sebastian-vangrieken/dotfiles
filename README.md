@@ -1,7 +1,12 @@
 # My personal dotfiles
 
-## ToDo
-- fix neovim
-- fix waybar
-- audio
-- create colorscheme
+## Neovim
+- [*] general options
+- [*] Lazy
+- [*] colorscheme
+- [*] treesitter
+- [*] statusline
+- [*] auto pairs
+
+## Hyprland
+
