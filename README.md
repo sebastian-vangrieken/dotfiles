@@ -1,12 +1,14 @@
 # My personal dotfiles
 
 ## Neovim
-- [ ] general options
-- [ ] Lazy
-- [ ] colorscheme
-- [ ] treesitter
-- [ ] statusline
-- [ ] auto pairs
+- [x] general options
+- [x] Lazy
+- [x] colorscheme
+- [x] treesitter
+- [x] statusline
+- [x] auto pairs
+- [ ] lsp
+- [ ] formatting
 
 ## Hyprland
 
