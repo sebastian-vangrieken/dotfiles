@@ -52,7 +52,7 @@ mount /dev/sda1 /mnt/boot/efi
 swapon /dev/sda2
 
 # Installation
-pacstrap -K /mnt base linux linux-firmware grub efibootmgr networkmanager git neovim man-db man-pages texinfo
+pacstrap -K /mnt base linux linux-firmware grub efibootmgr networkmanager neovim 
 
 genfstab -U /mnt >> /mnt/etc/fstab
 

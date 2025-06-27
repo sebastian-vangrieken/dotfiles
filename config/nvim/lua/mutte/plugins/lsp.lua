@@ -37,6 +37,7 @@ return {
       				Lua = {}
     			}
   			})
+			vim.lsp.enable('phpactor')
 		end,
 	},
 	{
@@ -50,7 +51,12 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"clangd",
+					"cssls", "css_variables", "cssmodules_ls",
+					"eslint",
+					"html",
 					"lua_ls",
+					"phpactor",
+					"ts_ls",
 				},
 			})
 		end,
