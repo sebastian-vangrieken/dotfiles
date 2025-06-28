@@ -8,7 +8,7 @@
 - [x] Statusline (mini.statusline)
 - [x] Auto pairs (mini.pairs)
 - [x] Lsp (Mason, Mason-lspconfig, nvim-lspconfig)
-- [ ] Formatting (conform)
+- [x] Formatting (conform)
 - [x] UI (noice.nvim)
 - [ ] Better diagnostics (trouble.nvim)
 
