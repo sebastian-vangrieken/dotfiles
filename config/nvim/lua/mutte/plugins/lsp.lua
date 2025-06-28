@@ -5,6 +5,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 		config = function()
   			vim.lsp.config('lua_ls', {
