@@ -10,7 +10,7 @@
 - [x] Lsp (Mason, Mason-lspconfig, nvim-lspconfig)
 - [x] Formatting (conform)
 - [x] UI (noice.nvim)
-- [ ] Better diagnostics (trouble.nvim)
+- [x] Better diagnostics (trouble.nvim)
 
 ## Hyprland
 
