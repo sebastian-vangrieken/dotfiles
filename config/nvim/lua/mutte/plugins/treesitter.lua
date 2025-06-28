@@ -7,9 +7,9 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
-				"asm", "c", "cmake", "cpp", "make", "nasm",
+				"asm", "nasm", "c", "cpp", "cmake", "make",
 				"bash",
-				"css", "html", "javascript", "php", "scss", "typescript",
+				"html", "css", "scss", "javascript", "typescript", "php", "blade",
 				"dockerfile",
 				"json", "toml",
 				"lua",
