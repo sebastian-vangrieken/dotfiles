@@ -81,6 +81,7 @@ return {
 					"lua_ls",
 					"phpactor",
 					"ts_ls",
+					"vue_ls",
 				},
 			})
 		end,
