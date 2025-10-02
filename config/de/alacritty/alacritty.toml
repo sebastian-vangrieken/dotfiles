@@ -1,2 +1,9 @@
+general.import = [
+	"~/dotfiles/config/de/alacritty/catppuccin-mocha.toml"
+]
+
 [font]
 normal = { family = "FiraMono Nerd Font", style = "Regular" }
+
+[env]
+TERM = "xterm-256color"

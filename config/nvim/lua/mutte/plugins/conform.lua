@@ -1,6 +1,5 @@
 return {
 	"stevearc/conform.nvim",
-	opts = {},
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
@@ -10,7 +9,6 @@ return {
 				html = { "prettier" },
 				javascript = { "prettier" },
 				lua = { "stylua" },
-				php = { "pretty-php", "php-cs-fixer" },
 				typescript = { "prettier" },
 			},
 			formatters = {

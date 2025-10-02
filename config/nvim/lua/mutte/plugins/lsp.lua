@@ -1,20 +1,20 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		opts = {},
+		config = function()
+			require("mason").setup({})
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
 		config = function()
 			vim.lsp.config("lua_ls", {
 				on_init = function(client)
 					if client.workspace_folders then
-						local path = client.workspace_folders[1].name
-						if
-							path ~= vim.fn.stdpath("config")
-							and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+						local path = client.workspace_folder[1].name
+						if path ~= vim.fn.stdpath("config") and
+							(vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
 						then
 							return
 						end
@@ -46,27 +46,12 @@ return {
 				underline = true,
 				update_in_insert = false,
 			})
-			-- local triggers = { "." }
-			-- vim.api.nvim_create_autocmd("InsertCharPre", {
-			-- 	buffer = vim.api.nvim_get_current_buf(),
-			-- 	callback = function()
-			-- 		if vim.fn.pumvisible() == 1 or vim.fn.state("m") == "m" then
-			-- 			return
-			-- 		end
-			-- 		local char = vim.v.char
-			-- 		if vim.list_contains(triggers, char) then
-			-- 			local key = vim.keycode("<C-x><C-n>")
-			-- 			vim.api.nvim_feedkeys(key, "m", false)
-			-- 		end
-			-- 	end,
-			-- })
 		end,
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{ "mason-org/mason.nvim" },
 			"neovim/nvim-lspconfig",
 		},
 		config = function()
@@ -76,13 +61,10 @@ return {
 					"cmake",
 					"cssls",
 					"css_variables",
-					"cssmodules_ls",
 					"eslint",
 					"html",
 					"lua_ls",
-					"phpactor",
 					"ts_ls",
-					"vue_ls",
 				},
 			})
 		end,

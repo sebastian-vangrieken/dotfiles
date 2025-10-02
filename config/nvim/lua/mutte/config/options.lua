@@ -14,5 +14,5 @@ vim.opt.termguicolors = true
 vim.opt.wrap = true
 
 vim.g.netrw_liststyle = 3
-vim.g.python3_host_prog = vim.fn.expand("~/.venv/python-venv/bin/python")
-
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
