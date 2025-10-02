@@ -1,0 +1,5 @@
+configuration {
+	font: "FiraMono Nerd Font 12";
+}
+
+@theme "catppuccin-default"
