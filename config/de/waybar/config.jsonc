@@ -12,11 +12,16 @@
 			"*": 9
 		}
 	},
+	"clock": {
+		"format": "{:%a %d %b  %H:%M}",
+		"tooltip": false,
+	},
 	"battery": {
 		"format": "{capacity}% {icon}",
-		"format-icons": ["󱊡", "󱊢", "󱊣"]
+		"format-icons": {
+			"charging": ["󰂄"],
+			"default": ["󰁻", "󰁽", "󰁿", "󰂁"]
+		},
+		"tooltip": false,
 	},
-	"clock": {
-		"format-alt": "{:%a, %d, %b  %H:%M}"
-	}
 }
