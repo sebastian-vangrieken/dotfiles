@@ -1,0 +1,11 @@
+{
+	"layer": "top", 
+	"height": 30,
+	"spacing": 0,
+	"modules-left": [],
+	"modules-center": ["clock"],
+	"modules-right": ["battery"],
+	"battery": {
+
+	}
+}
