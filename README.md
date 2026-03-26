@@ -1,4 +1,8 @@
 # My personal dotfiles
 
 ## programs
-- ghidra
+### source code
+- ghidra 
+
+### pacman
+-nmap
