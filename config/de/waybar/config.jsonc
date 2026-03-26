@@ -1,11 +1,21 @@
 {
 	"layer": "top", 
-	"height": 30,
-	"spacing": 0,
-	"modules-left": [],
+	"postition": "top",
+	"height": 34,
+	"spacing": 1,
+	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["clock"],
 	"modules-right": ["battery"],
+	"hyprland/workspaces": {
+		"persistent-workspaces": {
+			"*": 10
+		},
+		"active-only": false
+	}, 
+	"clock": {
+		"format-alt": "{:%d-%m-%Y}"
+	},
 	"battery": {
-
+		"format": "{capacity}%"		
 	}
 }
