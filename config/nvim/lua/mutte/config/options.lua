@@ -16,3 +16,5 @@ vim.opt.wrap = true
 vim.g.netrw_liststyle = 3
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+vim.g.python3_host_prog = "~/.python/bin/python3"
